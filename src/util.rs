@@ -32,18 +32,18 @@ pub fn session(host: &str) -> String {
 }
 
 pub fn new_item(path: &str) -> String {
-    format!("New-Item -ItemType Directory -Path \"{path}\" -Force")
+    format!("New-Item -ItemType Directory -Path \"{path}\" -Force -ToSession $Session")
 }
 
 pub fn move_item(from: &str, to: &str) -> String {
-    format!("Move-Item -Path \"{from}\" -Destination \"{to}\"")
+    format!("Move-Item -Path \"{from}\" -Destination \"{to}\" -ToSession $Session")
 }
 
 pub fn copy_item(from: &str, to: &str) -> String {
-    format!("Copy-Item -Path \"{from}\" -Destination \"{to}\"")
+    format!("Copy-Item -Path \"{from}\" -Destination \"{to}\" -ToSession $Session")
 }
 
-pub fn invoke(host: &str, command: &Vec<String>) -> String {
+pub fn invoke(command: &Vec<String>) -> String {
     let commands = command.join("\n");
-    format!("Invoke-Command -ComputerName \"{host}\" -Credential $Credential -ScriptBlock {{ {commands} }}")
+    format!("Invoke-Command -ToSession $Session -ScriptBlock {{ {commands} }}")
 }

@@ -44,7 +44,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 set_pwd(&config.password),
                 set_crdl(),
                 session(&config.host),
-                invoke(&config.host, &script_commands),
+                invoke(&script_commands),
             ]
             .join("\n");
             println!("{output_content}");
