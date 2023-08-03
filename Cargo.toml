@@ -1,0 +1,11 @@
+[package]
+name = "win-server-deploy-robot"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.0.0", default-features = false, features = ["full"] }
+serde = { version = "1.0.145", features = ["derive"] }
+serde_yaml = "0.9.14"
+uuid = { version = "1.4.1", features = ["v4", "fast-rng", "macro-diagnostics"] }
+chrono = { version = "0.4.26", default-features = false, features = ["alloc", "std", "clock"] }

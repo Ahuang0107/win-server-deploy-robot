@@ -1,0 +1,16 @@
+<App02>:
+  host: <host02>
+  username: <usr02>
+  password: <pwd02>
+  target_folder: <folder2>
+  files:
+    - <path3>
+    - <path4>
+<App01>:
+  host: <host01>
+  username: <usr01>
+  password: <pwd01>
+  target_folder: <folder1>
+  files:
+    - <path1>
+    - <path3>
